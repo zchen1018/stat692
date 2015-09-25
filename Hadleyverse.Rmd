@@ -81,6 +81,7 @@ The difference between a factor and a character or integer variable is most impo
 ```{r filter}
 girlsf <- filter(clf, sex == 'F')
 girlsc <- filter(clc, sex == 'F')
+# This remians all the levels of the factor
 xtabs(~sex, girlsf)
 xtabs(~sex, girlsc)
 ```
@@ -92,6 +93,9 @@ xtabs(~sex, girlsc)
 - The base `R` function `subset` allows for subsetting both rows and columns.  These operations are distinct in `dplyr`; `select` for rows and `filter` for columns
 
 ```{r}
+# Start with the classroom data and select only the "schoolid" and "housepov"
+# and give me the distict values
+# "classroom" is used as the first arg. in select()
 classroom %>% 
     select(schoolid,housepov) %>% 
     distinct()
@@ -125,6 +129,8 @@ classroom %>% group_by(classid) %>% summarise(mngain = mean(mathgain))
 
 - The results from `read_tsv` on `organoid.txt` look peculiar.
 ```{r organoid}
-#(org <- read_tsv("/afs/cs.wisc.edu/p/stat/Data/MS.exam/f14/organoid.txt"))
+# Wide data (Many columns for one object)
+# It's compact
+(org <- read_tsv("http://www.stat.wisc.edu/~yandell/st627/organoid.txt"))
 ```
 
