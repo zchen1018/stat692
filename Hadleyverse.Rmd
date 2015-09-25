@@ -63,6 +63,7 @@ The equivalent expression using  [readr](http://github.com/hadley/readr) is
 - I prefer to have categorical data expressed as factors.  Some disagree, sometimes vehemently, because of the retaining unused levels behavior.  They would rather express categorical data as strings.  In either case, expressing categorical data as integers is asking for trouble.
 - to convert the categorical data we can use
 ```{r mutate}
+# Set a column to NULL to delete it.
 (clf <- mutate(classroom,sex = factor(sex,labels=c('F','M')), minority = factor(minority,labels=c('N','Y')),
                classid = factor(classid), schoolid = factor(schoolid), childid = NULL))
 ```
