@@ -249,6 +249,27 @@ classroom %>% group_by(classid) %>% summarise(mngain = mean(mathgain))
 - The results from `read_tsv` on `organoid.txt` look peculiar.
 
 ```r
-#(org <- read_tsv("/afs/cs.wisc.edu/p/stat/Data/MS.exam/f14/organoid.txt"))
+# Wide data (Many columns for one object)
+# It's compact
+(org <- read_tsv("http://www.stat.wisc.edu/~yandell/st627/organoid.txt"))
+```
+
+```
+## Source: local data frame [300 x 12]
+## 
+##                [EMPTY]    [EMPTY] [EMPTY]  Size [EMPTY] [EMPTY] [EMPTY] [EMPTY] [EMPTY] [EMPTY]        [EMPTY]
+##                  (chr)      (chr)   (chr) (chr)   (chr)   (chr)   (chr)   (chr)   (chr)   (chr)          (chr)
+## 1              Tumor # Organoid #   Color Day 0   Day 1   Day 2   Day 3   Day 4   Day 5   Day 6          Day 7
+## 2  Heterotypic Tumor 1          1     Red    17      13      21      52      74      87     107 differentiated
+## 3  Heterotypic Tumor 1          2     Red    10       8      24      71     130     254     305            363
+## 4  Heterotypic Tumor 1          3     Red    16      31      44      38      40      44      51             53
+## 5  Heterotypic Tumor 1          4     Red    11      12      33      70      79      67      70           dead
+## 6  Heterotypic Tumor 1          5     Red     7      11      23      32      25      24      24             24
+## 7  Heterotypic Tumor 1          6     Red    19      31      62      80     130     oof     oof            oof
+## 8  Heterotypic Tumor 1          7     Red    15      11      30      70      76     177     212            227
+## 9  Heterotypic Tumor 1          8     Red    12      21      28      34      38    dead    dead           dead
+## 10 Heterotypic Tumor 1          9     Red    12      22      43      61      77     106     121            105
+## ..                 ...        ...     ...   ...     ...     ...     ...     ...     ...     ...            ...
+## Variables not shown: [EMPTY] (lgl)
 ```
 
